@@ -1,0 +1,969 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        <title>MEDIKKO - Find doctors for covid 19 &amp; all diseases near you</title>
+
+        <meta name="description" content="MEDIKKO - Find doctors for covid 19 &amp; all diseases near you">
+        <!--<meta name="author" content="pixelcave">
+        <meta name="robots" content="noindex, nofollow">-->
+
+        <!-- Open Graph Meta -->
+        <meta property="og:title" content="MEDIKKO - Find doctors for covid 19 &amp; all diseases near you">
+        <meta property="og:site_name" content="MEDIKKO">
+        <meta property="og:description" content="MEDIKKO - Find doctors for covid 19 &amp; all diseases near you">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="">
+        <meta property="og:image" content="">
+
+        <!-- Icons -->
+        <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+        <link rel="shortcut icon" href="assets/media/favicons/favicon.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="assets/media/favicons/favicon-192x192.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/media/favicons/apple-touch-icon-180x180.png">
+        <!-- END Icons -->
+
+        <!-- Stylesheets -->
+        <!-- Fonts and Dashmix framework -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+        <link rel="stylesheet" id="css-main" href="assets/css/dashmix.min.css">
+
+        <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
+        <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/xwork.min.css"> -->
+        <!-- END Stylesheets -->
+    </head>
+    <body>
+        <!-- Page Container -->
+        <!--
+            Available classes for #page-container:
+
+        GENERIC
+
+            'enable-cookies'                            Remembers active color theme between pages (when set through color theme helper Template._uiHandleTheme())
+
+        SIDEBAR & SIDE OVERLAY
+
+            'sidebar-r'                                 Right Sidebar and left Side Overlay (default is left Sidebar and right Side Overlay)
+            'sidebar-mini'                              Mini hoverable Sidebar (screen width > 991px)
+            'sidebar-o'                                 Visible Sidebar by default (screen width > 991px)
+            'sidebar-o-xs'                              Visible Sidebar by default (screen width < 992px)
+            'sidebar-dark'                              Dark themed sidebar
+
+            'side-overlay-hover'                        Hoverable Side Overlay (screen width > 991px)
+            'side-overlay-o'                            Visible Side Overlay by default
+
+            'enable-page-overlay'                       Enables a visible clickable Page Overlay (closes Side Overlay on click) when Side Overlay opens
+
+            'side-scroll'                               Enables custom scrolling on Sidebar and Side Overlay instead of native scrolling (screen width > 991px)
+
+        HEADER
+
+            ''                                          Static Header if no class is added
+            'page-header-fixed'                         Fixed Header
+
+
+        Footer
+
+            ''                                          Static Footer if no class is added
+            'page-footer-fixed'                         Fixed Footer (please have in mind that the footer has a specific height when is fixed)
+
+        HEADER STYLE
+
+            ''                                          Classic Header style if no class is added
+            'page-header-dark'                          Dark themed Header
+            'page-header-glass'                         Light themed Header with transparency by default
+                                                        (absolute position, perfect for light images underneath - solid light background on scroll if the Header is also set as fixed)
+            'page-header-glass page-header-dark'         Dark themed Header with transparency by default
+                                                        (absolute position, perfect for dark images underneath - solid dark background on scroll if the Header is also set as fixed)
+
+        MAIN CONTENT LAYOUT
+
+            ''                                          Full width Main Content if no class is added
+            'main-content-boxed'                        Full width Main Content with a specific maximum width (screen width > 1200px)
+            'main-content-narrow'                       Full width Main Content with a percentage width (screen width > 1200px)
+        -->
+        <div id="page-container" class="page-header-fixed page-header main-content-boxed">
+
+            <!-- Header -->
+            <header id="page-header" class="invisible" data-toggle="appear" data-class="animated fadeIn" data-timeout="500">
+                <!-- Header Content -->
+                <div class="content-header justify-content-dark justify-content-lg-between">
+                    <!-- Left Section -->
+                    <div class="d-flex align-items-center">
+                        <!-- Logo -->
+                        <a class="font-size-lg font-w600 text-primary" href="index.html">MEDIKKO</a>
+                        <!-- END Logo -->
+                    </div>
+                    <!-- END Left Section -->
+
+                    <!-- Right Section -->
+                    <div class="d-none d-lg-flex align-items-center">
+                        <!-- Menu -->
+                        <ul class="nav-main nav-main-horizontal nav-main-hover">
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" data-toggle="scroll-to" data-speed="750" href="#dm-package">
+                                    <i class="nav-main-link-icon fa fa-clipboard-list"></i>
+                                    <span class="nav-main-link-name">Covid-19 Outbreak</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" data-toggle="scroll-to" data-speed="750" href="#dm-dashboards">
+                                    <i class="nav-main-link-icon fa fa-compass"></i>
+                                    <span class="nav-main-link-name">Search Doctors</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" data-toggle="scroll-to" data-speed="750" href="#dm-features">
+                                    <i class="nav-main-link-icon fa fa-heartbeat"></i>
+                                    <span class="nav-main-link-name">Register as Doctor</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- END Menu -->
+                    </div>
+                    <!-- END Right Section -->
+                </div>
+                <!-- END Header Content -->
+
+                <!-- Header Search -->
+                <div id="page-header-search" class="overlay-header bg-primary">
+                    <div class="content-header">
+                        <form class="w-100" action="be_pages_generic_search.html" method="POST">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                                    <button type="button" class="btn btn-primary" data-toggle="layout" data-action="header_search_off">
+                                        <i class="fa fa-fw fa-times-circle"></i>
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control border-0" placeholder="Search or hit ESC.." id="page-header-search-input" name="page-header-search-input">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- END Header Search -->
+
+                <!-- Header Loader -->
+                <!-- Please check out the Loaders page under Components category to see examples of showing/hiding it -->
+                <div id="page-header-loader" class="overlay-header bg-primary-darker">
+                    <div class="content-header">
+                        <div class="w-100 text-center">
+                            <i class="fa fa-fw fa-2x fa-sun fa-spin text-white"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- END Header Loader -->
+            </header>
+            <!-- END Header -->
+
+            <!-- Main Container -->
+            <main id="main-container">
+                <!-- Hero -->
+                <div class="bg-white overflow-hidden">
+                    <div class="content content-top text-md-center mb-6">
+                        <div class=" pt-4 pt-lg-6">
+                            <h1 class="font-w700 mb-2">
+                                Find Perfect Doctor For Covid-19 And All Other Diseases
+                            </h1>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <p class="font-size-lg text-muted mb-4">
+                                    Find the most perfect doctor for you, Contact them and consult them for your better health. 
+                                </p>
+                                <div>
+                                    <a class="btn btn-alt-success px-4 py-2 m-1" href="tel:+919512288488">
+                                        <i class="fa fa-fw fa-phone-alt opacity-50 mr-1"></i> Call for Help
+                                    </a>
+                                    <a class="btn btn-alt-primary px-4 py-2 m-1" href="">
+                                        <i class="fa fa-fw fa-search opacity-50 mr-1"></i> Search Doctor
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END Hero -->
+
+                <!-- Dashboards -->
+                <div id="dm-dashboards">
+                    <div class="content content-full">
+                        <div class="py-5 mt-3 mt-lg-5 text-md-center">
+                            <p class="font-size-sm text-uppercase text-primary font-w600 mb-2">
+                                Powerful Layout
+                            </p>
+                            <h2 class="h1 font-w700 mb-3">
+                                20+ Web App Dashboards
+                            </h2>
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <p class="font-size-lg text-muted mb-0">
+                                        You can create any dashboard design you want for your web application project with <strong>Dashmix</strong>. The possibilities are endless. We’ve created many different designs to give you an idea and help you build your own.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-max-width mx-auto">
+                        <div class="row justify-content-center no-gutters">
+                            <div class="col-xl-10 px-3">
+                                <div class="row row-deck">
+                                    <div class="col-sm-6 col-xl-3">
+                                        <a class="block block-rounded block-link-pop" href="db_file_hosting.html">
+                                            <div class="block-content bg-gd-xdream">
+                                                <div class="pt-2 px-2 pull-b">
+                                                    <img class="img-fluid" src="assets/media/various/promo_dashboard_file_hosting.png" srcset="assets/media/various/promo_dashboard_file_hosting@2x.png 2x" alt="File Hosting Dashboard">
+                                                </div>
+                                            </div>
+                                            <div class="block-content block-content-full">
+                                                <h4 class="h5 mb-1">
+                                                    File Hosting
+                                                </h4>
+                                                <p class="text-muted mb-0">
+                                                    Cloud file hosting UI
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-xl-3">
+                                        <a class="block block-rounded block-link-pop" href="db_wp_post.html">
+                                            <div class="block-content bg-gd-xwork">
+                                                <div class="pt-2 px-2 pull-b">
+                                                    <img class="img-fluid" src="assets/media/various/promo_dashboard_wp_post.png" srcset="assets/media/various/promo_dashboard_wp_post@2x.png 2x" alt="WP Post Dashboard">
+                                                </div>
+                                            </div>
+                                            <div class="block-content block-content-full">
+                                                <h4 class="h5 mb-1">
+                                                    WP Post
+                                                </h4>
+                                                <p class="text-muted mb-0">
+                                                    A WordPress inspired UI
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-xl-3">
+                                        <a class="block block-rounded block-link-pop" href="db_corporate_slim.html">
+                                            <div class="block-content bg-gd-xpro">
+                                                <div class="pt-2 px-2 pull-b">
+                                                    <img class="img-fluid" src="assets/media/various/promo_dashboard_corporate_slim.png" srcset="assets/media/various/promo_dashboard_corporate_slim@2x.png 2x" alt="Corporate Slim Dashboard">
+                                                </div>
+                                            </div>
+                                            <div class="block-content block-content-full">
+                                                <h4 class="h5 mb-1">
+                                                    Corporate Slim
+                                                </h4>
+                                                <p class="text-muted mb-0">
+                                                    Modern and clean interface
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-xl-3">
+                                        <a class="block block-rounded block-link-pop" href="db_analytics.html">
+                                            <div class="block-content bg-xpro-dark">
+                                                <div class="pt-2 px-2 pull-b">
+                                                    <img class="img-fluid" src="assets/media/various/promo_dashboard_analytics.png" srcset="assets/media/various/promo_dashboard_analytics@2x.png 2x" alt="Analytics Dashboard">
+                                                </div>
+                                            </div>
+                                            <div class="block-content block-content-full">
+                                                <h4 class="h5 mb-1">
+                                                    Analytics
+                                                </h4>
+                                                <p class="text-muted mb-0">
+                                                    Web analytics interface
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-xl-3">
+                                        <a class="block block-rounded block-link-pop" href="db_chat.html">
+                                            <div class="block-content bg-xdream-light">
+                                                <div class="pt-2 px-2 pull-b">
+                                                    <img class="img-fluid" src="assets/media/various/promo_dashboard_chat.png" srcset="assets/media/various/promo_dashboard_chat@2x.png 2x" alt="Chat Dashboard">
+                                                </div>
+                                            </div>
+                                            <div class="block-content block-content-full">
+                                                <h4 class="h5 mb-1">
+                                                    Chat
+                                                </h4>
+                                                <p class="text-muted mb-0">
+                                                    Communication interface
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-xl-3">
+                                        <a class="block block-rounded block-link-pop" href="db_social_compact.html">
+                                            <div class="block-content bg-xmodern-light">
+                                                <div class="pt-2 px-2 pull-b">
+                                                    <img class="img-fluid" src="assets/media/various/promo_dashboard_social_compact.png" srcset="assets/media/various/promo_dashboard_social_compact@2x.png 2x" alt="Social Compact Dashboard">
+                                                </div>
+                                            </div>
+                                            <div class="block-content block-content-full">
+                                                <h4 class="h5 mb-1">
+                                                    Social Compact
+                                                </h4>
+                                                <p class="text-muted mb-0">
+                                                    UI similar to Facebook
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-xl-3">
+                                        <a class="block block-rounded block-link-pop" href="db_travel.html">
+                                            <div class="block-content bg-gd-sea">
+                                                <div class="pt-2 px-2 pull-b">
+                                                    <img class="img-fluid" src="assets/media/various/promo_dashboard_travel.png" srcset="assets/media/various/promo_dashboard_travel@2x.png 2x" alt="Travel Dashboard">
+                                                </div>
+                                            </div>
+                                            <div class="block-content block-content-full">
+                                                <h4 class="h5 mb-1">
+                                                    Travel
+                                                </h4>
+                                                <p class="text-muted mb-0">
+                                                    Apartment renting interface
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-xl-3">
+                                        <a class="block block-rounded block-link-pop" href="db_medical.html">
+                                            <div class="block-content bg-gd-sublime">
+                                                <div class="pt-2 px-2 pull-b">
+                                                    <img class="img-fluid" src="assets/media/various/promo_dashboard_medical.png" srcset="assets/media/various/promo_dashboard_medical@2x.png 2x" alt="Medical Dashboard">
+                                                </div>
+                                            </div>
+                                            <div class="block-content block-content-full">
+                                                <h4 class="h5 mb-1">
+                                                    Medical
+                                                </h4>
+                                                <p class="text-muted mb-0">
+                                                    Hospital based interface
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-xl-3">
+                                        <a class="block block-rounded block-link-pop" href="db_tasks.html">
+                                            <div class="block-content bg-gd-aqua">
+                                                <div class="pt-2 px-2 pull-b">
+                                                    <img class="img-fluid" src="assets/media/various/promo_dashboard_tasks.png" srcset="assets/media/various/promo_dashboard_tasks@2x.png 2x" alt="Tasks Dashboard">
+                                                </div>
+                                            </div>
+                                            <div class="block-content block-content-full">
+                                                <h4 class="h5 mb-1">
+                                                    Tasks
+                                                </h4>
+                                                <p class="text-muted mb-0">
+                                                    Todo list web application
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-xl-3">
+                                        <a class="block block-rounded block-link-pop" href="db_hosting.html">
+                                            <div class="block-content bg-xmodern">
+                                                <div class="pt-2 px-2 pull-b">
+                                                    <img class="img-fluid" src="assets/media/various/promo_dashboard_hosting.png" srcset="assets/media/various/promo_dashboard_hosting@2x.png 2x" alt="Hosting Dashboard">
+                                                </div>
+                                            </div>
+                                            <div class="block-content block-content-full">
+                                                <h4 class="h5 mb-1">
+                                                    Hosting
+                                                </h4>
+                                                <p class="text-muted mb-0">
+                                                    Perfect for custom web hosting
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-xl-3">
+                                        <a class="block block-rounded block-link-pop" href="db_booking.html">
+                                            <div class="block-content bg-xinspire-darker">
+                                                <div class="pt-2 px-2 pull-b">
+                                                    <img class="img-fluid" src="assets/media/various/promo_dashboard_booking.png" srcset="assets/media/various/promo_dashboard_booking@2x.png 2x" alt="Booking Dashboard">
+                                                </div>
+                                            </div>
+                                            <div class="block-content block-content-full">
+                                                <h4 class="h5 mb-1">
+                                                    Booking
+                                                </h4>
+                                                <p class="text-muted mb-0">
+                                                    Building a travel business
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-xl-3">
+                                        <a class="block block-rounded block-link-pop" href="db_gaming.html">
+                                            <div class="block-content bg-xeco-darker">
+                                                <div class="pt-2 px-2 pull-b">
+                                                    <img class="img-fluid" src="assets/media/various/promo_dashboard_gaming.png" srcset="assets/media/various/promo_dashboard_gaming@2x.png 2x" alt="Gaming Dashboard">
+                                                </div>
+                                            </div>
+                                            <div class="block-content block-content-full">
+                                                <h4 class="h5 mb-1">
+                                                    Gaming
+                                                </h4>
+                                                <p class="text-muted mb-0">
+                                                    Minecraft server
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-xl-3">
+                                        <a class="block block-rounded block-link-pop" href="db_classic_boxed.html">
+                                            <div class="block-content bg-default-lighter">
+                                                <div class="pt-2 px-2 pull-b">
+                                                    <img class="img-fluid" src="assets/media/various/promo_dashboard_classic_boxed.png" srcset="assets/media/various/promo_dashboard_classic_boxed@2x.png 2x" alt="Classic Boxed Dashboard">
+                                                </div>
+                                            </div>
+                                            <div class="block-content block-content-full">
+                                                <h4 class="h5 mb-1">
+                                                    Classic Boxed
+                                                </h4>
+                                                <p class="text-muted mb-0">
+                                                    Corporate analytics dashboard
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-xl-3">
+                                        <a class="block block-rounded block-link-pop" href="db_crypto.html">
+                                            <div class="block-content bg-dark">
+                                                <div class="pt-2 px-2 pull-b">
+                                                    <img class="img-fluid" src="assets/media/various/promo_dashboard_crypto.png" srcset="assets/media/various/promo_dashboard_crypto@2x.png 2x" alt="Crypto Dashboard">
+                                                </div>
+                                            </div>
+                                            <div class="block-content block-content-full">
+                                                <h4 class="h5 mb-1">
+                                                    Crypto
+                                                </h4>
+                                                <p class="text-muted mb-0">
+                                                    Portfolio management
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-xl-3">
+                                        <a class="block block-rounded block-link-pop" href="db_banking.html">
+                                            <div class="block-content bg-xwork-light">
+                                                <div class="pt-2 px-2 pull-b">
+                                                    <img class="img-fluid" src="assets/media/various/promo_dashboard_banking.png" srcset="assets/media/various/promo_dashboard_banking@2x.png 2x" alt="Banking Dashboard">
+                                                </div>
+                                            </div>
+                                            <div class="block-content block-content-full">
+                                                <h4 class="h5 mb-1">
+                                                    Banking
+                                                </h4>
+                                                <p class="text-muted mb-0">
+                                                    Modern money dashboard
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-xl-3">
+                                        <a class="block block-rounded block-link-pop" href="db_social.html">
+                                            <div class="block-content bg-xmodern-dark">
+                                                <div class="pt-2 px-2 pull-b">
+                                                    <img class="img-fluid" src="assets/media/various/promo_dashboard_social.png" srcset="assets/media/various/promo_dashboard_social@2x.png 2x" alt="Social Dashboard">
+                                                </div>
+                                            </div>
+                                            <div class="block-content block-content-full">
+                                                <h4 class="h5 mb-1">
+                                                    Social
+                                                </h4>
+                                                <p class="text-muted mb-0">
+                                                    For your new social network
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-xl-3">
+                                        <a class="block block-rounded block-link-pop" href="db_dark.html">
+                                            <div class="block-content bg-dark">
+                                                <div class="pt-2 px-2 pull-b">
+                                                    <img class="img-fluid" src="assets/media/various/promo_dashboard_dark.png" srcset="assets/media/various/promo_dashboard_dark@2x.png 2x" alt="Dark Dashboard">
+                                                </div>
+                                            </div>
+                                            <div class="block-content block-content-full">
+                                                <h4 class="h5 mb-1">
+                                                    Dark
+                                                </h4>
+                                                <p class="text-muted mb-0">
+                                                    Utility based design
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-xl-3">
+                                        <a class="block block-rounded block-link-pop" href="db_modern.html">
+                                            <div class="block-content bg-gd-dusk">
+                                                <div class="pt-2 px-2 pull-b">
+                                                    <img class="img-fluid" src="assets/media/various/promo_dashboard_modern.png" srcset="assets/media/various/promo_dashboard_modern@2x.png 2x" alt="Modern Dashboard">                            </div>
+                                            </div>
+                                            <div class="block-content block-content-full">
+                                                <h4 class="h5 mb-1">
+                                                    Modern
+                                                </h4>
+                                                <p class="text-muted mb-0">
+                                                    Creative and media oriented
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-xl-3">
+                                        <a class="block block-rounded block-link-pop" href="db_minimal.html">
+                                            <div class="block-content bg-xwork-lighter">
+                                                <div class="pt-2 px-2 pull-b">
+                                                    <img class="img-fluid" src="assets/media/various/promo_dashboard_minimal.png" srcset="assets/media/various/promo_dashboard_minimal@2x.png 2x" alt="Minimal Dashboard">
+                                                </div>
+                                            </div>
+                                            <div class="block-content block-content-full">
+                                                <h4 class="h5 mb-1">
+                                                    Minimal
+                                                </h4>
+                                                <p class="text-muted mb-0">
+                                                    For super clean and artistic apps
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-xl-3">
+                                        <a class="block block-rounded block-link-pop" href="db_messages.html">
+                                            <div class="block-content bg-xsmooth">
+                                                <div class="pt-2 px-2 pull-b">
+                                                    <img class="img-fluid" src="assets/media/various/promo_dashboard_messages.png" srcset="assets/media/various/promo_dashboard_messages@2x.png 2x" alt="Messages Dashboard">
+                                                </div>
+                                            </div>
+                                            <div class="block-content block-content-full">
+                                                <h4 class="h5 mb-1">
+                                                    Messages
+                                                </h4>
+                                                <p class="text-muted mb-0">
+                                                    Inbox web application
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="py-3 py-sm-5 px-md-7">
+                            <div class="block block-rounded block-transparent bg-body-dark">
+                                <div class="block-content block-content-full bg-gd-white-op-l">
+                                    <div class="row justify-content-sm-between align-items-center p-md-3">
+                                        <div class="col-sm-6">
+                                            <h4 class="mb-2">
+                                                Dashmix is full featured
+                                            </h4>
+                                            <p class="text-muted mb-sm-0">
+                                                It comes packed with tons of elements, widgets, components and ready designed pages!
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-6 text-sm-right">
+                                            <a class="btn btn-primary px-4 py-2" href="be_pages_dashboard.html">
+                                                Explore it!
+                                                <i class="fa fa-fw fa-arrow-right ml-1"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END Dashboards -->
+
+                <!-- Widgets Collection -->
+                <div id="dm-widgets" class="bg-body-light">
+                    <div class="content">
+                        <div class="py-5 mt-3 mt-lg-5 text-md-center">
+                            <p class="font-size-sm text-uppercase text-primary font-w600 mb-2">
+                                Data Presentation
+                            </p>
+                            <h2 class="h1 font-w700 mb-3">
+                                Widgets Collection
+                            </h2>
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <p class="font-size-lg text-muted mb-0">
+                                        Power your dashboards with carefully crafted widgets. Choose from a huge collection and various categories, including but not limited to Tiles, Statistics, Media, Users and Blog.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row py-3">
+                            <div class="col-md-6 d-md-flex align-items-md-center">
+                                <div class="row w-100 gutters-tiny">
+                                    <div class="col-sm-6">
+                                        <a class="block text-center bg-image" style="background-image: url('assets/media/photos/photo19.jpg');" href="javascript:void(0)">
+                                            <div class="block-content block-content-full bg-gd-fruit-op aspect-ratio-4-3 d-flex justify-content-center align-items-center">
+                                                <div>
+                                                    <i class="far fa-2x fa-user-circle text-white"></i>
+                                                    <div class="font-w600 mt-3 text-uppercase text-white">Accounts</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <a class="block text-center bg-image" style="background-image: url('assets/media/photos/photo19.jpg');" href="javascript:void(0)">
+                                            <div class="block-content block-content-full bg-gd-dusk-op aspect-ratio-4-3 d-flex justify-content-center align-items-center">
+                                                <div>
+                                                    <i class="fa fa-2x fa-inbox text-white"></i>
+                                                    <div class="font-w600 mt-3 text-uppercase text-white">Inbox (2)</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5 offset-md-1 d-md-flex align-items-md-center">
+                                <div class="py-3">
+                                    <h4 class="mb-2">
+                                        Tile Widgets
+                                    </h4>
+                                    <p class="mb-0 text-muted">
+                                        Super clean and effective tile design which can help you present statistics, create your custom menus or showcase vital information to your users.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row py-3">
+                            <div class="col-md-6 d-md-flex align-items-md-center">
+                                <a class="block block-rounded block-link-pop w-100 my-3 bg-image text-center" style="background-image: url('assets/media/photos/photo18.jpg');" href="javascript:void(0)">
+                                    <div class="block-content block-content-full bg-white-90">
+                                        <img class="img-avatar img-avatar96 img-avatar-thumb" src="assets/media/avatars/avatar15.jpg" alt="">
+                                        <p class="font-size-lg font-w600 mb-0 mt-2">Wayne Garcia</p>
+                                        <p class="text-muted mb-0">
+                                            Web Developer
+                                        </p>
+                                    </div>
+                                    <div class="block-content block-content-full bg-white">
+                                        <div class="row gutters-tiny my-2">
+                                            <div class="col-4">
+                                                <p class="mb-2">
+                                                    <i class="fa fa-fw fa-2x fa-boxes text-muted"></i>
+                                                </p>
+                                                <p class="font-size-sm mb-0">
+                                                    7 Projects
+                                                </p>
+                                            </div>
+                                            <div class="col-4">
+                                                <p class="mb-2">
+                                                    <i class="fa fa-fw fa-2x fa-user-tie text-muted"></i>
+                                                </p>
+                                                <p class="font-size-sm mb-0">
+                                                    98 Clients
+                                                </p>
+                                            </div>
+                                            <div class="col-4">
+                                                <p class="mb-2">
+                                                    <i class="fa fa-fw fa-2x fa-money-bill-wave text-muted"></i>
+                                                </p>
+                                                <p class="font-size-sm mb-0">
+                                                    1.6k Sales
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-5 offset-md-1 d-md-flex align-items-md-center">
+                                <div class="py-3">
+                                    <h4 class="mb-2">
+                                        User Widgets
+                                    </h4>
+                                    <p class="mb-0 text-muted">
+                                        A vast collection of user related widgets can be used to create all kind of cards with information, perfect for user centric dashboards and web applications.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row py-3">
+                            <div class="col-md-6 d-md-flex align-items-md-center">
+                                <div class="block block-rounded w-100 text-center">
+                                    <div class="block-content pb-8 text-right bg-image" style="background-image: url('assets/media/photos/photo21.jpg');">
+                                        <a class="badge badge-warning font-w700 p-2 text-uppercase" href="javascript:void(0)">
+                                            Tutorials
+                                        </a>
+                                    </div>
+                                    <div class="block-content">
+                                        <a class="font-w600 text-dark" href="javascript:void(0)">
+                                            Learn to Code
+                                        </a>
+                                        <p class="font-size-sm text-muted mt-1">
+                                            David Fuller &middot; 9 min
+                                        </p>
+                                    </div>
+                                    <div class="block-content block-content-full bg-body-light">
+                                        <div class="row no-gutters font-size-sm text-center">
+                                            <div class="col-4">
+                                                <a class="text-muted font-w600" href="javascript:void(0)">
+                                                    <i class="fa fa-fw fa-eye mr-1"></i> 456
+                                                </a>
+                                            </div>
+                                            <div class="col-4">
+                                                <a class="text-muted font-w600" href="javascript:void(0)">
+                                                    <i class="fa fa-fw fa-heart mr-1"></i> 67
+                                                </a>
+                                            </div>
+                                            <div class="col-4">
+                                                <a class="text-muted font-w600" href="javascript:void(0)">
+                                                    <i class="fa fa-fw fa-comments mr-1"></i> 56
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5 offset-md-1 d-md-flex align-items-md-center">
+                                <div class="py-3">
+                                    <h4 class="mb-2">
+                                        Blog Widgets
+                                    </h4>
+                                    <p class="mb-0 text-muted">
+                                        Lots of story and author based widgets for your blog of your web app. List and present your stories with style and in various ways.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row py-3">
+                            <div class="col-md-6 d-md-flex align-items-md-center">
+                                <a class="block block-rounded w-100 my-3 bg-image" style="background-image: url('assets/media/photos/photo18.jpg');" href="javascript:void(0)">
+                                    <div class="block-content block-content-full d-flex justify-content-between bg-primary-dark-op">
+                                        <div class="mr-3">
+                                            <p class="text-white font-size-h2 font-w300 mb-0">
+                                                +150%
+                                            </p>
+                                            <p class="text-white-75 font-size-sm font-w700 text-uppercase mb-0">
+                                                Sales
+                                            </p>
+                                        </div>
+                                        <div class="mt-2">
+                                            <i class="fa fa-2x fa-coins text-white-50"></i>
+                                        </div>
+                                    </div>
+                                    <div class="block-content block-content-full overflow-hidden bg-primary-dark-op">
+                                        <!-- Sparkline Container -->
+                                        <!-- jQuery Sparkline (.js-sparkline class is initialized in Helpers.sparkline() -->
+                                        <!-- For more info and examples you can check out http://omnipotent.net/jquery.sparkline/#s-about -->
+                                        <span class="js-sparkline" data-type="line"
+                                              data-points="[25,36,25,36,48,29,53,64]"
+                                              data-width="100%"
+                                              data-height="150px"
+                                              data-line-color="#fff"
+                                              data-chart-range-min="15"
+                                              data-fill-color="transparent"
+                                              data-spot-color="transparent"
+                                              data-min-spot-color="transparent"
+                                              data-max-spot-color="transparent"
+                                              data-highlight-spot-color="#fff"
+                                              data-highlight-line-color="#fff"
+                                              data-tooltip-suffix="Sales"></span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-5 offset-md-1 d-md-flex align-items-md-center">
+                                <div class="py-3">
+                                    <h4 class="mb-2">
+                                        Statistic Widgets
+                                    </h4>
+                                    <p class="mb-0 text-muted">
+                                        All web applications need to present statistics to its users at some point, so we’ve made sure to provide many options to fulfil your project’s requirements.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="py-3 py-sm-5 px-md-7">
+                            <div class="block block-rounded block-transparent bg-body">
+                                <div class="block-content block-content-full bg-gd-white-op-l">
+                                    <div class="row justify-content-sm-between align-items-center p-md-3">
+                                        <div class="col-sm-6">
+                                            <h4 class="mb-2">
+                                                Rich Widget Collection
+                                            </h4>
+                                            <p class="text-muted mb-sm-0">
+                                                Clean design and thoughtful decisions helped us craft an awesome widget collection.
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-6 text-sm-right">
+                                            <a class="btn btn-primary px-4 py-2" href="be_widgets_tiles.html">
+                                                Explore them all
+                                                <i class="fa fa-fw fa-arrow-right ml-1"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END Widgets Collection -->
+
+                <!-- Info -->
+                <div class="content">
+                    <div class="py-5 py-md-7 text-center">
+                        <h2 class="mb-3">
+                            Crafted with <i class="fa fa-fw fa-heart text-danger"></i> by <a class="link-fx" href="https://1.envato.market/ydb">pixelcave</a>
+                        </h2>
+                        <p class="font-size-lg text-muted mb-0">
+                            Over-profit by choosing <strong>Dashmix</strong>. It is crafted with passion to enable you build the best dashboards.
+                        </p>
+                    </div>
+                </div>
+                <!-- END Info -->
+
+                <!-- Handcrafted Design -->
+                <div id="dm-design" class="bg-body-light overflow-hidden">
+                    <div class="content content-full">
+                        <div class="py-5 mt-3 mt-lg-5 text-md-center">
+                            <p class="font-size-sm text-uppercase text-primary font-w600 mb-2">
+                                Crafted with love
+                            </p>
+                            <h2 class="h1 font-w700 mb-3">
+                                Handcrafted Design
+                            </h2>
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <p class="font-size-lg text-muted mb-0">
+                                        Delivering a product that is useful, helpful and easy to use is our priority. Always built with care and attention to detail to enable you work more efficiently and effortlessly.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-5">
+                            <div class="row py-3">
+                                <div class="col-md-5 d-md-flex align-items-md-center">
+                                    <div>
+                                        <h4 class="h5 mb-2">
+                                            Passion
+                                        </h4>
+                                        <p class="mb-0 text-muted">
+                                            We are passionate with what we do and love crafting products that can make your life easier and help you succeed. We pay attention to small details and always aiming for the best.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 offset-md-1 d-md-flex align-items-md-center">
+                                    <div class="block block-rounded block-fx-pop row no-gutters w-100 py-4 my-3 overflow-hidden">
+                                        <div class="row no-gutters text-center w-100 mb-2">
+                                            <div class="col-4">
+                                                <div class="item mx-auto">
+                                                    <i class="si fa-2x si-badge text-info"></i>
+                                                </div>
+                                                <strong>Quality</strong>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="item mx-auto">
+                                                    <i class="si fa-2x si-chemistry text-xsmooth"></i>
+                                                </div>
+                                                <strong>Creativity</strong>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="item mx-auto">
+                                                    <i class="si fa-2x si-heart text-danger"></i>
+                                                </div>
+                                                <strong>Passion</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row py-3">
+                                <div class="col-md-5 d-md-flex align-items-md-center">
+                                    <div>
+                                        <h4 class="h5 mb-2">
+                                            Commitment
+                                        </h4>
+                                        <p class="mb-0 text-muted">
+                                            We are committed to our work and stand by our projects. Our aim is to improve them in every update and offer the most full-featured packages with the smallest possible footprint
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 offset-md-1 offset-md-1 d-md-flex align-items-md-center">
+                                    <div class="block block-rounded block-fx-pop row no-gutters w-100 py-4 my-3 overflow-hidden">
+                                        <div class="row no-gutters text-center w-100 mb-2">
+                                            <div class="col-4">
+                                                <div class="item mx-auto">
+                                                    <i class="si fa-2x si-compass text-success"></i>
+                                                </div>
+                                                <strong>Motivation</strong>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="item mx-auto">
+                                                    <i class="si fa-2x si-energy text-warning"></i>
+                                                </div>
+                                                <strong>Simplicity</strong>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="item mx-auto">
+                                                    <i class="si fa-2x si-vector text-xinspire"></i>
+                                                </div>
+                                                <strong>Design</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END Handcrafted Design -->
+
+                <!-- Footer -->
+                <footer id="page-footer" class="bg-white">
+                    <div class="content py-5">
+                        <div class="row font-size-sm">
+                            <div class="col-sm-6 order-sm-2 py-1 text-center text-sm-right">
+                                Crafted with <i class="fa fa-heart text-danger"></i> by <a class="font-w600" href="https://1.envato.market/ydb" target="_blank">pixelcave</a>
+                            </div>
+                            <div class="col-sm-6 order-sm-1 py-1 text-center text-sm-left">
+                                <a class="font-w600" href="https://1.envato.market/r6y" target="_blank">MEDDIKO</a> &copy; <span data-toggle="year-copy"></span>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- END Footer -->
+            </main>
+            <!-- END Main Container -->
+        </div>
+        <!-- END Page Container -->
+
+        <!--
+            Dashmix JS Core
+
+            Vital libraries and plugins used in all pages. You can choose to not include this file if you would like
+            to handle those dependencies through webpack. Please check out assets/_js/main/bootstrap.js for more info.
+
+            If you like, you could also include them separately directly from the assets/js/core folder in the following
+            order. That can come in handy if you would like to include a few of them (eg jQuery) from a CDN.
+
+            assets/js/core/jquery.min.js
+            assets/js/core/bootstrap.bundle.min.js
+            assets/js/core/simplebar.min.js
+            assets/js/core/jquery-scrollLock.min.js
+            assets/js/core/jquery.appear.min.js
+            assets/js/core/js.cookie.min.js
+        -->
+        <script src="assets/js/dashmix.core.min.js"></script>
+
+        <!--
+            Dashmix JS
+
+            Custom functionality including Blocks/Layout API as well as other vital and optional helpers
+            webpack is putting everything together at assets/_js/main/app.js
+        -->
+        <script src="assets/js/dashmix.app.min.js"></script>
+
+        <!-- Page JS Plugins -->
+        <script src="assets/js/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
+
+        <!-- Page JS Helpers (jQuery Sparkline Plugin) -->
+        <script>jQuery(function(){Dashmix.helpers(['sparkline']);});</script>
+    </body>
+</html>
